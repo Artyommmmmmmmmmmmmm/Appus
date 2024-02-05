@@ -1,0 +1,24 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Submit" />
+</form>
+
+<table>
+    <tr>
+        <td>файл</td>
+    </tr>
+    {% for i in files %}
+    <tr>
+        <td>{{i.file}}</td>
+        <td>{{i.text}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<form method="post" action="/main/find/" >
+    {% csrf_token %}
+    <input type="text" value="слово для поиска" name="word">
+    <input type="submit" value="'Найти">
+</form>
+
+<a href="/main/del">очистить</a>

@@ -1,0 +1,2 @@
+initdb.exe -U testuser -A password -E utf8 -W -D C:\sw\postgresql-13.2-1\db-data
+pg_ctl -D ^"C^:^\sw^\postgresql^-13^.2^-1^\db^-data^" -l logfile start
